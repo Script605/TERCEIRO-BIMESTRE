@@ -1,15 +1,51 @@
-using System;
 using UnityEngine;
 
-public class Chave : MonoBehaviour
+public class Inimigo : MonoBehaviour
 {
-    public GameObject textoDeVitoria;
-    private void OnCollisionEnter2D(Collision2D other)
+    
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rigidbody2D;
+    
+    private GameObject player;
+
+    public float distanciaDeVisao = 10;
+    public float velocidade = 5;
+    
+    
+    void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        
+        // player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+   
+    void Update()
+    {
+        if (player != null)
         {
-            textoDeVitoria.SetActive(true);
-            gameObject.SetActive(false);
+            //posição do player
+            Debug.Log(player.transform.position);
+
+            //direita
+            if (player.transform.position.x > transform.position.x
+                && Mathf.Abs(player.transform.position.x - transform.position.x) < distanciaDeVisao)
+            {
+                transform.position += Vector3.right * velocidade * Time.deltaTime;
+                spriteRenderer.flipX = false;
+            }
+            
+            //esquerda
+            if (player.transform.position.x < transform.position.x
+                && Mathf.Abs(player.transform.position.x - transform.position.x) < distanciaDeVisao)
+            {
+                transform.position -= Vector3.right * velocidade * Time.deltaTime;
+                spriteRenderer.flipX = true;
+            }
+
         }
+
     }
 }
