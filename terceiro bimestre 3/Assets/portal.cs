@@ -1,20 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PortalCarregarCena : MonoBehaviour
+public class Portal : MonoBehaviour
 {
     [Header("Nome da cena para carregar")]
     public string nomeDaCena;
 
-    private void OnTriggerEnter2D(Collider2D colisao)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (colisao.CompareTag("Player"))
+        // Verifica se o objeto que entrou é o jogador
+        if (collision.CompareTag("Player"))
         {
-            CarregarCena();
+            CarregarProximaCena();
         }
     }
 
-    void CarregarCena()
+    void CarregarProximaCena()
     {
         if (!string.IsNullOrEmpty(nomeDaCena))
         {
@@ -22,7 +23,7 @@ public class PortalCarregarCena : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Nenhum nome de cena foi definido no portal!");
+            Debug.LogError("Nenhuma cena definida no portal!");
         }
     }
 }
