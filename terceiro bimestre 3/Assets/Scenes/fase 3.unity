@@ -4996,7 +4996,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5006,7 +5006,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12516,7 +12516,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12526,7 +12526,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12536,7 +12536,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -30259,10 +30259,32 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 13
     m_Data: {fileID: -4326689981271417894, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1761957491966546689, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -4080137071908401649, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1761957491966546689, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2455287069041890485, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
   - m_RefCount: 1
@@ -30271,28 +30293,6 @@ Tilemap:
     m_Data: {fileID: 8486786076564984107, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 749326418515318850, guid: 6191f15c7abd8b7478e4f1caa848112e, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 2995
     m_Data:
@@ -30531,6 +30531,7 @@ GameObject:
   - component: {fileID: 457537989}
   - component: {fileID: 457537988}
   - component: {fileID: 457537987}
+  - component: {fileID: 457537991}
   m_Layer: 0
   m_Name: arvore
   m_TagString: Untagged
@@ -30565,7 +30566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b113038de7b5c424ab0a517534d9bd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeDaCena: 
+  nomeDaCena: fase 4
 --- !u!19719996 &457537988
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -31496,6 +31497,33 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &457537991
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457537985}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &636326072
 GameObject:
   m_ObjectHideFlags: 0
@@ -32420,7 +32448,7 @@ Transform:
   m_GameObject: {fileID: 948846940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.46, y: -3.39, z: 0}
+  m_LocalPosition: {x: 286.2, y: -7.5, z: 0}
   m_LocalScale: {x: 3.7890182, y: 4.1190667, z: 2.4030974}
   m_ConstrainProportionsScale: 0
   m_Children:
