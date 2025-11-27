@@ -1,105 +1,29 @@
 using UnityEngine;
 
-public class InimigoVoador : MonoBehaviour
+public class InimigoVoadorPerseguidor : MonoBehaviour
 {
-        
-    private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rigidbody2D;
-    
-    private GameObject player;
+    public float velocidade = 4f;
+    public float distanciaDeteccao = 6f;
 
-    public float distanciaDeVisao = 10;
-    public float velocidade = 5;
+    private Transform jogador;
 
-    public Transform[] pontosDePatrulha;
-    private int pontoAtual = 0;
-    
-   void Start()
+    void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        
-        // player = GameObject.Find("Player");
-        player = GameObject.FindGameObjectWithTag("Player");
-        
-      for(int i = 0; i <pontosDePatrulha.Length; i++)
-        {
-          //  player.transform.GetChild(i).SetParent(null);
-          
-          Debug.Log(pontosDePatrulha[i].name);
-          
-          pontosDePatrulha[i].transform.SetParent(null);
-        }
-        
+        jogador = GameObject.FindGameObjectWithTag("Player").transform;
     }
-  void Update()
+
+    void Update()
     {
-        if (player != null)
+        float distancia = Vector2.Distance(transform.position, jogador.position);
+
+        if (distancia < distanciaDeteccao)
         {
-            //posição do player
-           // Debug.Log(player.transform.position);
-            
-            if(Mathf.Abs(player.transform.position.x - transform.position.x) > distanciaDeVisao ||
-               Mathf.Abs(player.transform.position.y - transform.position.y) > distanciaDeVisao)
-            {
-                Debug.Log(pontoAtual);
-                
-                transform.position = Vector3.MoveTowards(transform.position, 
-                    pontosDePatrulha[pontoAtual].position, 
-                    velocidade * Time.deltaTime);
-
-                if(Mathf.Abs(pontosDePatrulha[pontoAtual].position.x - transform.position.x) <= 0.01f ||
-                   Mathf.Abs(pontosDePatrulha[pontoAtual].position.y - transform.position.y) <= 0.01f)
-                {
-                    pontoAtual++;
-                    if (pontoAtual >= pontosDePatrulha.Length)
-                    {
-                        pontoAtual = 0;
-                    }
-
-                    if (pontosDePatrulha[pontoAtual].position.x > transform.position.x)
-                    {
-                        spriteRenderer.flipX = false;
-                    }
-
-                    else
-                    if (pontosDePatrulha[pontoAtual].position.x < transform.position.x)
-                    {
-                        spriteRenderer.flipX = true;
-                    }
-                }
-            }
-            else
-            {
-                pontoAtual = 0;
-            }
-            
-            
-
-            //direita
-            if (player.transform.position.x > transform.position.x
-                && Mathf.Abs(player.transform.position.x - transform.position.x) < distanciaDeVisao)
-            {
-               transform.position = Vector3.MoveTowards(transform.position, 
-                   player.transform.position, 
-                   velocidade * Time.deltaTime);
-              
-               spriteRenderer.flipX = false;
-            }
-            else
-            //esquerda
-            if (player.transform.position.x < transform.position.x
-                && Mathf.Abs(player.transform.position.x - transform.position.x) < distanciaDeVisao)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, 
-                    player.transform.position, 
-                    velocidade * Time.deltaTime);
-                
-                spriteRenderer.flipX = true;
-            }
-         
-       
-
+            // Voa em direção ao jogador
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                jogador.position,
+                velocidade * Time.deltaTime
+            );
         }
     }
 }
