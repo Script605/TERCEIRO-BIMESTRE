@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 419998682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -103.42, y: -44.26, z: 0}
+  m_LocalPosition: {x: -105.9, y: -44.2, z: 0}
   m_LocalScale: {x: 3.7890182, y: 4.1190667, z: 2.4030974}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b113038de7b5c424ab0a517534d9bd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeDaCena: fase 3
+  nomeDaCena: fase 6
 --- !u!483693784 &910196656
 TilemapRenderer:
   m_ObjectHideFlags: 0
