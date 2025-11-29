@@ -1,51 +1,32 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Inimigo : MonoBehaviour
 {
-    
-    private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rigidbody2D;
-    
-    private GameObject player;
+    public float distanciaDePerseguicao = 10f;
 
-    public float distanciaDeVisao = 10;
-    public float velocidade = 5;
-    
-    
+    private Transform player;
+    private NavMeshAgent agente;
+
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        
-        // player = GameObject.Find("Player");
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        agente = GetComponent<NavMeshAgent>();
     }
 
-   
     void Update()
     {
-        if (player != null)
+        float distancia = Vector3.Distance(transform.position, player.position);
+
+        // Se o jogador estiver perto, perseguir
+        if (distancia <= distanciaDePerseguicao)
         {
-            //posição do player
-            Debug.Log(player.transform.position);
-
-            //direita
-            if (player.transform.position.x > transform.position.x
-                && Mathf.Abs(player.transform.position.x - transform.position.x) < distanciaDeVisao)
-            {
-                transform.position += Vector3.right * velocidade * Time.deltaTime;
-                spriteRenderer.flipX = false;
-            }
-            
-            //esquerda
-            if (player.transform.position.x < transform.position.x
-                && Mathf.Abs(player.transform.position.x - transform.position.x) < distanciaDeVisao)
-            {
-                transform.position -= Vector3.right * velocidade * Time.deltaTime;
-                spriteRenderer.flipX = true;
-            }
-
+            agente.SetDestination(player.position);
         }
-
+        else
+        {
+            // Para quando o jogador sai do alcance
+            agente.ResetPath();
+        }
     }
 }

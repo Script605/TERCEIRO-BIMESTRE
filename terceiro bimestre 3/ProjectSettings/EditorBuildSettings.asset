@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/fase 6.unity
     guid: fdbbf8269b6acd14abc29ce5b4d01390
+  - enabled: 1
+    path: Assets/Scenes/fase 7.unity
+    guid: a8810b6b0c6931a4e8dba8b1aa8fdb79
+  - enabled: 1
+    path: Assets/Scenes/fase 8.unity
+    guid: 089037a2d2e8deb4389f7181fe099207
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: ef7a93d98ea9cbf4cb3e32bd9318d807
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - textoDeVitoria: {fileID: 7825567504034858299, guid: 5522ab55729ef5d4e8d98da6e759d2ad, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

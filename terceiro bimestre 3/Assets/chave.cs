@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 
-public class texto : MonoBehaviour
+public class Chave : MonoBehaviour
 {
-    public GameObject textoDeVitoria;  // <- ESTA LINHA É O QUE FALTAVA!
-
+    public GameObject textoDeVitoria;
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
